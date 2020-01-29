@@ -125,7 +125,26 @@ class LatihanController extends Controller
     	];
 
     	foreach ($aral as $key => $value) {
-    		$str = "Nama : " .$value['nama']. "<br>Agama : " .$value['agama']. "<br>Alamat : " .$value['alamat']. "<br>Jenis Kelamin : " .$value['jk']. "<br>Jabatan : ". $value['jabat'] ."<br>Jam Kerja : " .$value['jamkerja']. "<br><br>Gaji : ";
+            $gj = 0;
+            if ($value['jabat'] == "Manager") {
+                $gj = 5000000;
+            }
+            else if ($value['jabat'] == "Fullstack") {
+                $gj = 3500000;
+            }
+            else if ($value['jabat'] == "Staff") {
+                $gj = 2500000;
+            }
+
+            if ($value['jamkerja'] > 250) {
+                $disc = $gj*0.1;
+            }
+            if ($value['jamkerja'] > 200) {
+                $disc = $gj*0.05;
+            }
+            $ppn = 0.025;
+            $total = $gj+$disc-$ppn;
+    		$str = "Nama : " .$value['nama']. "<br>Agama : " .$value['agama']. "<br>Alamat : " .$value['alamat']. "<br>Jenis Kelamin : " .$value['jk']. "<br>Jabatan : ". $value['jabat'] ."<br>Jam Kerja : " .$value['jamkerja']. "<br><br>Gaji Bersih : Rp. ". number_format($gj) . "<br>Bonus Gaji = Rp. ". number_format($disc) ."<br>PPN(2.5%) : Rp. ". number_format($ppn*$gj) . "<br>Total Gaji : Rp. ". number_format($total);
     		echo $str."<hr>";
     	}
     }

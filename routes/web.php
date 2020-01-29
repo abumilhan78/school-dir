@@ -57,3 +57,9 @@ Route::get('kali/{a?}/{b?}', 'LatihanController@perkalian');
 Route::get('data1', 'LatihanController@loop');
 Route::get('data2', 'LatihanController@loop2');
 Route::get('tgs', 'LatihanController@tugaspulang');
+
+
+//rabu minggu ke 2
+Route::get('tabungan', 'TabunganController@index');
+Route::get('tabungan/tambah/{a?}/{b?}/{c?}/{d?}', 'TabunganController@store');
+Route::get('tabungan/edit/{f?}', 'TabunganController@edit');

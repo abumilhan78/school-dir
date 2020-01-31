@@ -14,8 +14,8 @@ class TabunganController extends Controller
      */
     public function index()
     {
-        $tabungan = \App\Tabungan::all();
-        return $tabungan;
+        $tabungan = Tabungan::all()->take(10);
+        return view('tabung', compact('tabungan'));
     }
 
     /**

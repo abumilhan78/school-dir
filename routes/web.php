@@ -63,3 +63,13 @@ Route::get('tgs', 'LatihanController@tugaspulang');
 Route::get('tabungan', 'TabunganController@index');
 Route::get('tabungan/tambah/{a?}/{b?}/{c?}/{d?}', 'TabunganController@store');
 Route::get('tabungan/edit/{f?}', 'TabunganController@edit');
+
+Route::get('customer/add/{a?}/{b?}/{c?}/{d?}/{e?}/{f?}/{g?}', 'CustomerController@create');
+
+
+//kamis
+Route::get('pass', 'PracticeController@pass');
+Route::get('latihan1', 'PracticeController@pass1');
+
+//jum'at
+Route::get('tabung', 'TabunganController@index');

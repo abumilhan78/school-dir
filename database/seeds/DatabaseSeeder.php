@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Tabungan;
 use App\Customer;
+use App\Book;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([LaboursTableSeeder::class]);
     	
-        factory(Tabungan::class, 100)->create();
-        factory(Customer::class, 1000)->create();
+        // factory(Tabungan::class, 100)->create();
+        // factory(Customer::class, 1000)->create();
+        factory(Book::class, 10)->create();
     }
 }
